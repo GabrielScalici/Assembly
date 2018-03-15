@@ -16,11 +16,17 @@
   syscall
   move $t2, $v0 # Copia para t2 para nao perder o valor
 
+
 # Rotulo para fazer a logica fatorial
 FATORIAL:
 
   slt $v0, $t2, 1 # Verifica se n eh menor que 1
-  beq $v0
+  beq $v0, $t2, FINALIZAR
+  # f(x) = f(x) * f(x-1) ... f(1)
+  # diminui e soma ao registrador que contem f(x)
+  # acumula,
+  # volta para fatorial
+  j FATORIAL
 
 
 
