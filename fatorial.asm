@@ -8,7 +8,7 @@
 # MARS nao deixa colocar ALign 2 pois é padrao ja
   # Exibindo a frase para o usuario digitar um numero
   li $v0, 4
-  la #a0, str_incicial
+  la $a0, str_incicial
   syscall
 
   # Lendo o que o usuario digitou
